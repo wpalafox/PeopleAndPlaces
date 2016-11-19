@@ -2,135 +2,168 @@
 <html>
 <head>
 	<title>People and Places</title>
-	<meta charset="UTF-8">
+	
+    <meta charset="UTF-8">
     <!-- Link to reset stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<!--Import this app's stylesheet-->
+	
+    <!--Import this app's stylesheet-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
     <!--Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
-    <!-- Link to jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<!-- Link to this app's Javascript -->
-    <script type="text/javascript" src="assets/javascript/events.js"></script>
-    <script type="text/javascript" src="assets/javascript/api.js"></script>
-    <script type="text/javascript" src="assets/javascript/main.js"></script>
-</body>
-
 <div class="container">
 
-
-<!-- Main Bootstrap Search -->
-<div class="container">
 
     <!-- Jumbotron for Title -->
-    <div class="jumbotron" style="background-color: lightblue; color: white;">
+    <div class="jumbotron">
         <h1 class="text-center"><strong></i> People and Places Search</strong></h1>
     </div>
 
-    <!-- Row for Searching -->
+    
+
+    
+
+
+    <!-- Label Boxes -->
     <div class="row">
         <div class="col-sm-12">
         <br>
             <!-- First panel is for handling the search parameters -->
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong><i class="fa fa-search"></i>Contact Search</strong></h3>
+                    <h3 class="panel-title"><strong><i class="fa-folder-open-o"></i>Add Label</strong></h3>
                 </div>
+                
+               <!--- Labels   -->
                 <div class="panel-body">
 
-                    <!-- Here we create an HTML Form for handling the inputs-->
+                    <!-- Here we create an HTML Form for handling the Label inputs-->
                     <form role="form">
 
-                      <!-- Here we create the text box for capturing the search term-->
+                      <!-- Here we create the text box for capturing the activity term-->
                       <div class="form-group">
-                        <label for="contactSearch">Contact</label>
-                        <input type="text" class="form-control" id="contactName" placeholder="Carlos Herrera">
-                      </div>
-
-                      <!-- Here we create the text box for capturing the adress-->
-                      <div class="form-group">
-                        <label for="search">Address</label>
-                        <input type="text" class="form-control" id="contactAddress" placeholder="125 Main St.">
-
-                      </div>
-
-                      <!-- Here we create the text box for capturing the label-->
-                      <div class="form-group">
-                        <label for="search">Label</label>
-                        <input type="text" class="form-control" id="searchTerm" placeholder="Enjoys Mexican food">
-                      </div>
-
-                    
+                        
+                        
+                        <input type="text" class="form-control" id="addLabel" placeholder="Hikes">
                       
-                      <!-- Here we have our final submit button -->
-                      <button type="submit" class="btn btn-default" id="goSearch"><i class="fa fa-search"></i> Submit</button>
-                      
-
-
-                      <button type="button" class="btn btn-default" id="clearAll"><i class="fa fa-trash"></i> Clear</button>
-
+                      </div>
+    
+                        <button type="submit" class="btn btn-default" id="addLabelButton"><i class="fa fa-check-circle-o"></i>Add Label</button>
+                
+                        <!-- Resets --> 
+                        <button type="reset" class="btn btn-default" id="resetLabelsButton"><i class="fa fa-check-circle-o"></i>Clear Labels</button>
+ 
+                  
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
+</div>   
 
-<!-- This row will handle all of the retrieved articles -->
+
+
+
+   <!-- This row will handle all of the categorized labels -->
+  
+        
+        
+<div class="container">
     <div class="row">
-        <div class="col-sm-12">
-        <br>
+         <div class="col-sm-3">
+        <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+                
+                <div class="panel panel-primary">
+
+                    <!-- Panel Heading for the retrieved articles box -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>General Labels </strong></h3>
+                    </div>
+
+                        <!-- This main panel will hold the map -->
+                    <div class="panel-body" id="labelsDisplay">
+                    </div>
+                
+                </div>
+
+          </div>
+
+      
+        <div class="col-sm-3">
+            <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+                <div class="panel panel-primary">
+
+                    <!-- Panel Heading for the retrieved articles box -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Restaurant Labels</strong></h3>
+                    </div>
+
+                    <!-- This main panel will hold the map -->
+                    <div class="panel-body" id="restaurantDisplay">
+                    </div>
+                
+                </div>
+
+        </div>
+                
+        
+         <div class="col-sm-3">
 
             <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
-            <div class="panel panel-primary">
+                <div class="panel panel-primary">
 
-                <!-- Panel Heading for the retrieved articles box -->
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong><i class="fa fa-map"></i> Map</strong></h3>
-                </div>
+                    <!-- Panel Heading for the retrieved articles box -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Activity Labels</strong></h3>
+                    </div>
 
-                <!-- This main panel will hold the map -->
-                <div class="panel-body" id="map">
-                </div>
+                    <!-- This main panel will hold the map -->
+                    <div class="panel-body" id="activitiesDisplay">
+                    </div>
             
+                </div>
 
+          </div>     
 
-            </div>
+            
+        <div class="col-sm-3">
+            <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+                <div class="panel panel-primary">
+
+                    <!-- Panel Heading for the retrieved articles box -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Nightlife Labels</strong></h3>
+                    </div>
+
+                    <!-- This main panel will hold the map -->
+                    <div class="panel-body" id="nightDisplay">
+                    </div>
+                
+                </div>
         </div>
-    </div>
+   
+    </div>    
+</div>            
+            
+     
 
+
+<!-- Link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Link to this app's Javascript -->
+    <script type="text/javascript" src="assets/javascript/events.js"></script>
+    <script type="text/javascript" src="assets/javascript/api.js"></script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
+    
+    </body>
 </html>
