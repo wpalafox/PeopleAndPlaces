@@ -27,12 +27,50 @@
         <h1 class="text-center"><strong></i> People and Places Search</strong></h1>
     </div>
 
+    <div class="row">
+        <div class="col-sm-12">
+        <br>
+            <!-- First panel is for handling the search parameters -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong><i class="fa-folder-open-o"></i>Google Contacts</strong></h3>
+                </div>
+                
+               <!--- Labels   -->
+                <div class="panel-body">
+
+                    <!-- Here we create an HTML Form for handling the Label inputs-->
+                    <form role="form">
+
+                      <!-- Here we create the text box for capturing the activity term-->
+                      <div class="form-group">
+                        
+                        
+                        <input type="text" class="form-control" id="addLabel" placeholder="Enrique Pena">
+                        <br>
+                        <input type="text" class="form-control" id="addLabel" placeholder="123 Main St.">
+                      
+
+
+                      </div>
+    
+                        <button type="submit" class="btn btn-default" id="addContactButton"><i class="fa fa-check-circle-o"></i>Add Contact</button>
+                
+                        <!-- Resets --> 
+                        <button type="reset" class="btn btn-default" id="resetContactsButton"><i class="fa fa-check-circle-o"></i>Clear Contact</button>
+ 
+                  
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     
 
-    
 
-
-    <!-- Label Boxes -->
+<!-- Label Boxes -->
     <div class="row">
         <div class="col-sm-12">
         <br>
@@ -52,7 +90,7 @@
                       <div class="form-group">
                         
                         
-                        <input type="text" class="form-control" id="addLabel" placeholder="Hikes">
+                        <input type="text" class="form-control" id="addLabel" placeholder="Hikes, sushi, etc.">
                       
                       </div>
     
@@ -86,7 +124,7 @@
 
                     <!-- Panel Heading for the retrieved articles box -->
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>General Labels </strong></h3>
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>General</strong></h3>
                     </div>
 
                         <!-- This main panel will hold the map -->
@@ -104,7 +142,7 @@
 
                     <!-- Panel Heading for the retrieved articles box -->
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Restaurant Labels</strong></h3>
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Restaurants</strong></h3>
                     </div>
 
                     <!-- This main panel will hold the map -->
@@ -123,7 +161,7 @@
 
                     <!-- Panel Heading for the retrieved articles box -->
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Activity Labels</strong></h3>
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Activities</strong></h3>
                     </div>
 
                     <!-- This main panel will hold the map -->
@@ -136,12 +174,12 @@
 
             
         <div class="col-sm-3">
-            <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+        <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
                 <div class="panel panel-primary">
 
                     <!-- Panel Heading for the retrieved articles box -->
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Nightlife Labels</strong></h3>
+                        <h3 class="panel-title"><strong><i class="fa fa-map"></i>Nightlife</strong></h3>
                     </div>
 
                     <!-- This main panel will hold the map -->
@@ -152,12 +190,68 @@
         </div>
    
     </div>    
+
+
+   
+
+<div class="row">
+        <div class="col-sm-12">
+        <br>
+            <!-- First panel is for handling the search parameters -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong><i class="fa-folder-open-o"></i>Map</strong></h3>
+                </div>
+                
+               <!--- Labels   -->
+                <div class="panel-body">
+
+                    <!-- Here we create an HTML Form for handling the Label inputs-->
+                    
+ 
+                  
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>            
             
      
 
 
-<!-- Link to jQuery -->
+    <!-- Link to jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
     <!-- Link to this app's Javascript -->
