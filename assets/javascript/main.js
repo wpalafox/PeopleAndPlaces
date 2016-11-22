@@ -34,8 +34,7 @@ renderContacts();
 
 
 
-//Array of selected buttons 
-var selectedLabels = [];
+
 
 
 var labelCount = labelsArray.length;
@@ -47,7 +46,7 @@ $(".editButton").on("click", editContact);
 //On Click event associated with the add label function 
 //Dynamically generate buttons using jQuery
 
-//==============================================================
+//====================================================////////
 
 //This function adds user inputed labels to the labelArray
 
@@ -70,30 +69,36 @@ $("#addLabelButton").on("click", function(){
 
 });
 
-//==============================================================
+//===================================================//////////
 
 
 function editContact() {
 
 
-//alert(this.value);
-
+//Assigns the variable the corresponding connect
 var contact = contactsArray[this.value];
-var name = contact.name;
+
+var name = contact.contactName;
+
+console.log(name);
+
 $('#contactName').value(contact.contactName);
+
 $('#editedContact').show();
 
 console.log(contact.contactName);
 
 
 
-
+return false;
 
 
 }
 
 
-//===============================================================
+//=====================================================////////
+
+
 $("#deleteLabelButton").on("click", deleteLabel);
 
 	
@@ -208,6 +213,8 @@ function renderLabels(){
 
 	}
  
+   return false;
+
  }
 
 //================================================================
@@ -250,6 +257,8 @@ function renderContacts() {
 		$('#contactsDisplay').append(c);
 
 
+
+	
 
 	};
 
