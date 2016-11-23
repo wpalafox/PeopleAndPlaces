@@ -24,22 +24,29 @@ var labelsArray = ['Seafood', 'Mexican food', 'Chinese food', 'Thai food',
 
 
 var contactsArray  = [{contactName:"Mike", address:"100 N Brazos Austin, TX", tags: ['Sushi', 'Movies', 'Golf','Concerts','Art Museum']},
-                				{contactName:"Steve", address:"312 S Madison St., La Grange IL", tags: ['Concerts', 'Dance', 'Movies','Baseball']},
-                				{contactName:"Lisa", address:"1060 W Addison St., Chicago IL", tags:['Bowling', 'Concerts', 'Art Museum', 'Golf','Sailing']}];
+                	  {contactName:"Steve", address:"312 S Madison St., La Grange IL", tags: ['Concerts', 'Dance', 'Movies','Baseball']},
+                	  {contactName:"Lisa", address:"1060 W Addison St., Chicago IL", tags:['Bowling', 'Concerts', 'Art Museum', 'Golf','Sailing']}];
 
 
-$('#editedContact').hide();
+//Eventually want to uncomment this- when I figure out why it won't reappear
+//$('#editedContact').hide();
 
+//Calls the function
 renderContacts();
 
-
-
-
-
-
+//Keeps the count 
 var labelCount = labelsArray.length;
 
 
+
+
+
+
+
+
+/////////////////////////ON CLICK EVENTS AND FUNCTIONS////////////////////////
+
+//Edit Contact Button
 $(".editButton").on("click", editContact);
 
 
@@ -69,34 +76,13 @@ $("#addLabelButton").on("click", function(){
 
 });
 
-//===================================================//////////
-
-
-function editContact() {
-
-
-//Assigns the variable the corresponding connect
-var contact = contactsArray[this.value];
-
-var name = contact.contactName;
-
-console.log(name);
-
-$('#contactName').value(contact.contactName);
-
-$('#editedContact').show();
-
-console.log(contact.contactName);
+//===================================================//////////================
 
 
 
-return false;
 
 
-}
-
-
-//=====================================================////////
+//=====================================================////////==================
 
 
 $("#deleteLabelButton").on("click", deleteLabel);
@@ -121,7 +107,7 @@ $("#deleteLabelButton").on("click", deleteLabel);
 
 
 
-//================================================
+//==============================================================
 
 
 function deleteLabel(){   
@@ -140,18 +126,14 @@ function deleteLabel(){
 	}
 
 
-
-
-		renderLabels();
+	renderLabels();
 
 	event.preventDefault();
 }
 
-//=======================================================
 
+//===============================================================
 
-
-//================================================================
 
 
 
@@ -179,11 +161,6 @@ function renderLabels(){
 		l.text(labelsArray[i]); //Displays label text on button
 		
 		
-
-
-
-
-
 		//Logic to sort the labels into designated Panels
 		
 		if(labelsArray[i].includes("food") === true || labelsArray[i].includes("food") === true){
@@ -217,15 +194,14 @@ function renderLabels(){
 
  }
 
-//================================================================
+//===============================================================================================================
 
 renderLabels();
 
-//================================================================
+//===============================================================================================================
 
 //function that resets all of the label displays 
 $('#resetLabelsButton').on('click', function(){
-
 
 
 	$('#labelsDisplay').empty();	
@@ -236,24 +212,66 @@ $('#resetLabelsButton').on('click', function(){
 
 });
 
-//=========================================================================================
+//=================================================================================================//
 
-function renderContacts() {
+
+function editContact() {
+
+
+//Assigns the variable the with i value of the corresponding contact
+var contact = contactsArray[this.value];
+
+//defines name variable as the contactName from the contact variable
+var name = contact.contactName;
+
+console.log(name);
+
+
+
+//All of my edited values on in the variables 
+
+//var editedContactName = $('#contactName').value().trim();
+//var editedAddress = $('#contactAddress').value().trim();
+//var editedTags = $('#tags').value();.trim();
+
+
+//Now I need to append these variables to the HTML
+
+
+return false;
+
+}
+
+/////////////////////////////////////////////////////////////
+
+function renderContacts(){
 
 	$('#contactsDisplay').empty();	
 
 
 	for(var i=0; i < contactsArray.length; i++){
+		
+		//Defines edit button and attaches value of the array element it is connected to 
 		var edit = $('<button type="submit" class="editButton" value="' + i + '">Edit</button>');
+		
+		//Defines contact variable as the i element in the contactArray
 		var contact = contactsArray[i];
+		
+
+
+		//Defines the c variable 
 		var c = $('<div class="contactDiv">');
-		c.text(contact.contactName + " " + contact.address + " " + contact.tags.toString()); //Displays label text on button
+		
+		c.html(contact.contactName + " " + contact.address + " " +contact.tags.toString()); //Displays label text on div
 		
 		c.attr('data-name', i);    
 		c.append(edit);
 		c.append('</div>');
 
 		console.log(c);
+		
+		//Appends the Div contact to the page
+
 		$('#contactsDisplay').append(c);
 
 
@@ -262,7 +280,7 @@ function renderContacts() {
 
 	};
 
-//========================================================================================
+//==================================================================================================//
 
 
 
